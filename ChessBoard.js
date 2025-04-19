@@ -18,13 +18,13 @@ export class ChessBoard {
 
   knightMoves(start, end) {
     this.clear();
+    this.visited[start[0]][start[1]] = 0;
 
     if (!this.equalPosition(start, end)) {
       let cellVisited, moves, currCell;
       let queue = [];
 
       queue.push(start);
-      this.visited[start[0]][start[1]] = 0;
 
       while (queue.length !== 0) {
         currCell = queue[0];
